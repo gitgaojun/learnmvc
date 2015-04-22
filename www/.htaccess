@@ -1,7 +1,35 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: jun90610@gmail.com
- * Date: 2015/4/22
- * Time: 14:48
- */
+<IfModule mod_rewrite.c>
+#order allow,deny
+
+#deny from 127.0.0.1
+
+
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+##初始化设置基本的规则 start
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]  ##用来兼容 www.xxx.com/index.php www.xxx.com
+##初始化设置基本的规则 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</IfModule>
