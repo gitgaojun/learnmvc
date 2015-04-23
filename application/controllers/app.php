@@ -18,7 +18,7 @@ defined("APPPATH") or exit("No direct script access allowed");
         public function index()
         {
 
-            
+
             $data['title'] = "Sparrow-shop";
 
             $this->vars($data);

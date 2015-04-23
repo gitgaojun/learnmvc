@@ -23,13 +23,13 @@ defined("APPPATH") OR exit("No direct script access allowed");
         $_class_name = "app";
         $_fun_name = "index";
     }
-
+    //var_dump($_class_name, $_fun_name);exit;
 
     require_once(CPATH.$_class_name.".php");
 
     $_class_name = new $_class_name();
 
-    $_class_name->$_class_name();
+    $_class_name->$_fun_name();
 
 
 
