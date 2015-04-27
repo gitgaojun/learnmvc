@@ -13,23 +13,23 @@ defined("APPPATH") OR exit("No direct script access allowed");
     require_once("Controller.php");
 
     $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
-    if(count($_URI) >= 3 )
+    if(count($_URI) >= 2 )
     {
-        $_class_name = $_URI["1"];
-        $_fun_name = $_URI["2"];
+        $_class_name = $_URI["0"];
+        $_fun_name = $_URI["1"];
     }
     else
     {
         $_class_name = "app";
         $_fun_name = "index";
     }
-    //var_dump($_class_name, $_fun_name);exit;
+    //var_dump($_URI, $_class_name, $_fun_name);exit;
 
     require_once(CPATH.$_class_name.".php");
 
-    $_class_name = new $_class_name();
+    $_className = new $_class_name();
 
-    $_class_name->$_fun_name();
+    $_className->$_fun_name();
 
 
 

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+html{
+    width:100%;
+    height:100%;
+    margin:0px;
+    padding:0px;
+}
+body{
+    display:block;
+    width:900px;
+    height:100%;
+    margin:0 auto;
+    padding:0px;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style:none;
+}
+.product{
+    margin:20px auto;
+    border: 1px solid gray;
+    width:900px;
+    height:700px;
+}
+.product > a{
+    display:block;
+    float:left;
+    width:300px;
+    height:350px;
+    outline:1px solid rosybrown;
+}
+.account{
+    width:900px;
+    height:30px;
+    outline:1px solid brown;
+}
+.account > .account-a{
+    display: block;
+    float:right;
+    width:50px;
+    height:100%;
+    padding:auto 5px;
+    line-height: inherit;
+    text-align: center;
+    background-color: aqua;
+}
+.account > .account-a:hover{
+    background-color: green;
+    cursor:pointer;
+}
+
+
+
+
