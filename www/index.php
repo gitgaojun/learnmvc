@@ -23,4 +23,7 @@ define("CSSPATH", rtrim(WEB."define/css", "/")."/");
 //image文件路径
 define("IMAGEPATH", rtrim(WEB."define/img", "/")."/");
 
+//开启session
+session_start();
+
 require_once(SYSPATH."core/Sparrow.php");

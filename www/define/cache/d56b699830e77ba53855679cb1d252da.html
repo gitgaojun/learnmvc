@@ -12,8 +12,11 @@
         <form id="loginForm">
             <div><span class="login-title">Login-in</span></div>
             <div>用户名:<input type="text" name="uName" id="uName"></div>
+            <div><span id="uName-msg"></span></div>
             <div>密码:<input type="password" name="pwd" id="uPwd"></div>
-            <div>验证码:<input type="text" name="uCode" id="uCode"></div>
+            <div><span id="uPwd-msg"></span></div>
+            <div><div id="adCodeImage" class="adCodeImage"><img src="/login/adCode" id='codeImage' onclick="getCodeImage();"></div>验证码:<input type="text" name="uCode" id="uCode"></div>
+            <div><span id="uCode-msg"></span></div>
             <div><button type="button" class="login-sub">登录</button></div>
         </form>
     </div>

@@ -16,7 +16,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
     if(count($_URI) >= 2 )
     {
         $_class_name = $_URI["0"];
-        $_fun_name = $_URI["1"];
+        $_fun_name = $_URI["1"]?$_URI["1"]:"index";
     }
     else
     {

@@ -16,7 +16,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         function __construct()
         {
-
+            require_once('Loader.php');
+            $this->load = new Loader();
 
         }
 
@@ -48,6 +49,10 @@ defined("APPPATH") or exit("No direct script access allowed");
          */
         protected function compound()
         {
+            if(!is_file(VPATH.$this->_view.EXT))
+            {
+                return;
+            }
             ob_start();
             echo (str_replace( array("{", "}"), array("<?php ", "?>"), file_get_contents(VPATH.$this->_view.EXT)));
             $buffer = ob_get_contents();
