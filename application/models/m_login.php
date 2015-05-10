@@ -12,7 +12,13 @@ defined("APPPATH") or exit("No direct script access allowed");
     {
         function __construct()
         {
-            parent::__construct();
+            //parent::__construct();
+        }
+
+        public function isUser()
+        {
+            $a = "asdf";
+            return $a;
         }
 
 
