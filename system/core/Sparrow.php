@@ -11,7 +11,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
  */
 
     require_once("Controller.php");
-
+    require_once("Model.php");
     $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
     if(count($_URI) >= 2 )
     {
