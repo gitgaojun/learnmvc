@@ -15,10 +15,9 @@ defined("APPPATH") or exit("No direct script access allowed");
             //parent::__construct();
         }
 
-        public function isUser()
+        public function isUser( $uName, $uPwd )
         {
-            $a = "asdf";
-            return $a;
+
         }
 
 

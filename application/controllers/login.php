@@ -36,7 +36,8 @@ defined("APPPATH") or exit("No direct script access allowed");
             $uPwd   =   empty($_POST["uPwd"])?"":addslashes(trim($_POST["uPwd"]));
             $uCode  =   empty($_POST["uCode"])?"":addslashes(trim($_POST["uCode"]));
             $this->load->model("M_login");
-            $this->M_login->isUser($uName, $uPwd);
+            $aaa = $this->M_login->isUser($uName, $uPwd);
+
             if($uName == "")
             {
                 $result["msg"] = "用户名不能为空";
@@ -55,7 +56,7 @@ defined("APPPATH") or exit("No direct script access allowed");
                 json_encode($result);
                 exit;
             }
-            json_encode($result);
+            echo json_encode($result);
             exit;
         }
 

@@ -13,6 +13,11 @@ defined("APPPATH") OR exit("No direct script access allowed");
  */
     class  Loader
     {
+        function __construct()
+        {
+            $this->SR =& get_instance();
+        }
+
         public function helper($helperFileName)
         {
             if(!is_file(APPPATH."../application/helpers/".$helperFileName.".php"))
@@ -35,7 +40,9 @@ defined("APPPATH") OR exit("No direct script access allowed");
             require_once(APPPATH."../application/models/".$modelFileName.".php");
             if(class_exists($modelFileName))
             {
-                $this->$modelFileName = new $modelFileName;
+
+                $name = new $modelFileName;
+                $this->SR->$modelFileName = $name;
             }
         }
 

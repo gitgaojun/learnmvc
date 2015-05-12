@@ -13,12 +13,18 @@ defined("APPPATH") or exit("No direct script access allowed");
     {
         protected $_data = array();//页面赋值的标量数组
         protected $_view = "";//视图的文件名
+        private static $instance;
 
         function __construct()
         {
+            self::$instance =& $this;
             require_once('Loader.php');
             $this->load = new Loader();
+        }
 
+        public static function &get_instance()
+        {
+            return self::$instance;
         }
 
         /**

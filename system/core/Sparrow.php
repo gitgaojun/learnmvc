@@ -11,6 +11,10 @@ defined("APPPATH") OR exit("No direct script access allowed");
  */
 
     require_once("Controller.php");
+    function &get_instance()
+    {
+        return SR_Controller::get_instance();
+    }
     require_once("Model.php");
     $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
     if(count($_URI) >= 2 )

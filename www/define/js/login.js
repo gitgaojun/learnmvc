@@ -12,19 +12,19 @@ $(document).ready(function(){
 
 
         $("#uName").focus();
-        if($uName == null)
+        if($uName === null)
         {
-            $("#uName-msg").html("用户名不能为空").css("color","red");
+            $("#uName-msg").text("用户名不能为空").css("color","red");
             return false;
         }
-        if($uPwd == null)
+        if($uPwd === null)
         {
-            $("#uPwd-msg").html("密码不能为空").css("color","red");
+            $("#uPwd-msg").text("密码不能为空").css("color","red");
             return false;
         }
-        if($uCode == null)
+        if($uCode === null)
         {
-            $("#uCode-msg").html("验证码不能为空").css("color","red");
+            $("#uCode-msg").text("验证码不能为空").css("color","red");
             return false;
         }
         $.ajax({
@@ -33,6 +33,7 @@ $(document).ready(function(){
             dataType:"json",
             data:$formData,
             success:function(data){
+                console.log(data);return false;
                 if(data.code = 1000)
                 {
                     alert("你未注册，现在去注册");
