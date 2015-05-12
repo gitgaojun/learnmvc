@@ -13,7 +13,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
  */
     class  Loader
     {
-
         public function helper($helperFileName)
         {
             if(!is_file(APPPATH."../application/helpers/".$helperFileName.".php"))
@@ -25,7 +24,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
             {
                 $this->$helperFileName = new $helperFileName();
             }
-
         }
 
         public function model($modelFileName)
