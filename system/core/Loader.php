@@ -25,11 +25,13 @@ defined("APPPATH") OR exit("No direct script access allowed");
 
         protected function database( $setDB = "default" )
         {
-            if(!is_file( APPPATH . "../system/Database.php" ))
+            if(!is_file( APPPATH . "../system/core/Database.php" ))
             {
                 exceptionPack("database class not found");//抛出一个异常信息；
+                exit;
             }
-            return new $databaseLink();
+            require_once( APPPATH . "../system/core/Database.php" );
+            return new DB();
         }
 
         public function helper($helperFileName)

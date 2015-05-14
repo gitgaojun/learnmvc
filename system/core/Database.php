@@ -7,16 +7,51 @@ defined("APPPATH") OR exit("No direct script access allowed");
  * Time: 9:17
  */
 
-    class Database
+    class DB
     {
+        private $set = array();//数据库的配置信息
+        private $link;
         function __construct($db = "default")
         {
-            if(!is_file( APPPTAH . "../../config/database.php" ))
+            if(!is_file( APPPATH . "../application/config/database.php" ))
             {
                 exceptionPack("config/database.php is not exist");
             }
             require_once( APPPATH . "../application/config/database.php" );
-            $this->set = $db;
+            $this->set = $database[$db];//数据库的配置数组
+            $this->initiative();
         }
+
+        /**
+         * 初始化数据库连接
+         */
+        private function initiative()
+        {
+            $_dbConfig = $this->set;
+            //利用@屏蔽掉 建议使用mysqli或者pdo的建议
+            $this->link = @mysql_connect($_dbConfig['host'], $_dbConfig['user'], $_dbConfig['pwd']);
+            mysql_query("SET NAMES 'utf8'");
+            if (!$this->link)
+            {
+                die('Could not connect:' . mysql_error());
+            }
+            mysql_select_db($_dbConfig['database'], $this->link) or die('Can\'t use foo:' . mysql_error());
+
+        }
+
+        public function query($sql)
+        {
+            $result = mysql_query($sql);
+            return $result;
+        }
+
+        /**
+         * 销毁数据库连接
+         */
+        public function __destruct()
+        {
+            mysql_close($this->link);
+        }
+
     }
 

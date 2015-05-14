@@ -10,6 +10,16 @@ defined("APPPATH") OR exit("No direct script access allowed");
  * 主要用来整合各个文件，和实例化各个对象，以及整合视图
  */
 
+    //设置开发环境的错误提示
+    switch(ENVIRONMENT)
+    {
+        case "development":
+            ini_set("display",1);
+        break;
+        case "production":
+            ini_set("display",0);
+        break;
+    }
     require_once("Exception.php");//定义的异常处理的方法
     require_once("Controller.php");
     function &get_instance()

@@ -8,5 +8,8 @@
 
     class SR_Model
     {
-
+        function __construct()
+        {
+            $
+        }
     }

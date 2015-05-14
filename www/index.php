@@ -4,6 +4,12 @@
 //网站的地址
 define("WEB", "http://www.learnmvc.com/");
 
+/**
+ * 设置错误提示开关
+ * development -> int_set('display_error', 1);
+ * production  -> int_set('display_error', 0);
+ */
+define("ENVIRONMENT", "development");
 //文件的路径
 define("APPPATH", str_replace("\\","/",rtrim(__DIR__,"/")."/"));
 //控制器的路径
