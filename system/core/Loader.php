@@ -16,6 +16,20 @@ defined("APPPATH") OR exit("No direct script access allowed");
         function __construct()
         {
             $this->SR =& get_instance();
+            $this->initiative();
+        }
+        private function initiative()
+        {
+            $this->database();
+        }
+
+        protected function database( $setDB = "default" )
+        {
+            if(!is_file( APPPATH . "../system/Database.php" ))
+            {
+                exceptionPack("database class not found");//抛出一个异常信息；
+            }
+            return new $databaseLink();
         }
 
         public function helper($helperFileName)
@@ -45,6 +59,8 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 $this->SR->$modelFileName = $name;
             }
         }
+
+
 
 
 

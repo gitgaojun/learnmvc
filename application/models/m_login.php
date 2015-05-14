@@ -12,7 +12,7 @@ defined("APPPATH") or exit("No direct script access allowed");
     {
         function __construct()
         {
-            //parent::__construct();
+            $_db = $this->load->database("learnmvc");
         }
 
         public function isUser( $uName, $uPwd )

@@ -10,6 +10,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
  * 主要用来整合各个文件，和实例化各个对象，以及整合视图
  */
 
+    require_once("Exception.php");//定义的异常处理的方法
     require_once("Controller.php");
     function &get_instance()
     {
