@@ -33,16 +33,9 @@ $(document).ready(function(){
             dataType:"json",
             data:$formData,
             success:function(data){
-                console.log(data);return false;
-                if(data.code = 1000)
-                {
-                    alert("你未注册，现在去注册");
-                    window.location.href="/register/index";
-                    return false;
-                }
                 if(data.status)
                 {
-                    window.location.href="/"
+                    window.location.href="/";
                 }else{
                     $("#uName-msg").html(data.msg);
                 }
@@ -55,7 +48,7 @@ $(document).ready(function(){
 
     });
 
-    function getCodeImage(){alert(23);
+    function getCodeImage(){
         $('#codeImage').attr("src","/login/adCode?num="+Math.random());
     }
 });

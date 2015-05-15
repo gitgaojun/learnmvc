@@ -35,29 +35,37 @@ defined("APPPATH") or exit("No direct script access allowed");
             $uName  =   empty($_POST["uName"])?"":addslashes(trim($_POST["uName"]));
             $uPwd   =   empty($_POST["uPwd"])?"":addslashes(trim($_POST["uPwd"]));
             $uCode  =   empty($_POST["uCode"])?"":addslashes(trim($_POST["uCode"]));
-            $this->load->model("M_login");
-            $aaa = $this->M_login->isUser($uName, $uPwd);
-            echo json_encode($aaa); exit;
+            $uPwd = md5($uPwd);
+
             if($uName == "")
             {
                 $result["msg"] = "用户名不能为空";
-                json_encode($result);
-                exit;
+                exit(json_encode($result));
             }
             if($uPwd == "")
             {
                 $result["msg"] = "密码不能为空";
-                json_encode($result);
-                exit;
+                exit(json_encode($result));
             }
             if($uCode == "")
             {
                 $result["msg"] = "验证码不能为空";
-                json_encode($result);
-                exit;
+                exit(json_encode($result));
             }
-            echo json_encode($result);
-            exit;
+            if(strtolower($uCode) != strtolower($_SESSION["adCodeText"]))
+            {
+                $result["msg"] = "验证码填写错误";
+                exit(json_encode($result));
+            }
+            $this->load->model("M_login");
+            $result['data'] = $userList = $this->M_login->isUser($uName, $uPwd);
+            if(empty($userList))
+            {
+                $result['msg'] = "用户名或密码错误";
+                exit(json_encode($result));
+            }
+            $result['status'] = true;
+            exit(json_encode($result));
         }
 
         /**

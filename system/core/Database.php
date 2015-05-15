@@ -30,7 +30,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
             $_dbConfig = $this->set;
             //利用@屏蔽掉 建议使用mysqli或者pdo的建议
             $this->link = mysqli_connect($_dbConfig['host'], $_dbConfig['user'], $_dbConfig['pwd'], $_dbConfig['database'])
-                            or die("mysql error:" . mysqli_errno());
+                            or die("mysql error:" . mysqli_connect_error());
             if (!$this->link)
             {
                 die('Could not connect:' . mysql_error());
@@ -40,13 +40,17 @@ defined("APPPATH") OR exit("No direct script access allowed");
 
         public function query($sql)
         {
-            $result = mysqli_query( $this->link , $sql ) or die("Could not query: . mysql_error()");
+            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
             if( $result )
             {
                 while($row = $result->fetch_assoc())
                 {
                     $data[] = $row;
                 }
+            }
+            if(count($data) == 1 )
+            {
+                return $data[0];
             }
             return $data;
         }
