@@ -27,6 +27,10 @@ defined("APPPATH") OR exit("No direct script access allowed");
         return SR_Controller::get_instance();
     }
     require_once("Model.php");
+    function &get_instance_model()
+    {
+        return SR_Model::get_instance_model();
+    }
     $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
     if(count($_URI) >= 2 )
     {

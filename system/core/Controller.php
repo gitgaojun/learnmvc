@@ -19,7 +19,9 @@ defined("APPPATH") or exit("No direct script access allowed");
         {
             self::$instance =& $this;
             require_once('Loader.php');
-            $this->load = new Loader();
+            //用来判断引用哪个类
+            $pClass = __CLASS__;
+            $this->load = new Loader($pClass);
         }
 
         public static function &get_instance()

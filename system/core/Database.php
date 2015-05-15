@@ -29,20 +29,26 @@ defined("APPPATH") OR exit("No direct script access allowed");
         {
             $_dbConfig = $this->set;
             //利用@屏蔽掉 建议使用mysqli或者pdo的建议
-            $this->link = @mysql_connect($_dbConfig['host'], $_dbConfig['user'], $_dbConfig['pwd']);
-            mysql_query("SET NAMES 'utf8'");
+            $this->link = mysqli_connect($_dbConfig['host'], $_dbConfig['user'], $_dbConfig['pwd'], $_dbConfig['database'])
+                            or die("mysql error:" . mysqli_errno());
             if (!$this->link)
             {
                 die('Could not connect:' . mysql_error());
             }
-            mysql_select_db($_dbConfig['database'], $this->link) or die('Can\'t use foo:' . mysql_error());
-
+            mysqli_query( $this->link, "SET NAMES 'utf8'");
         }
 
         public function query($sql)
         {
-            $result = mysql_query($sql);
-            return $result;
+            $result = mysqli_query( $this->link , $sql ) or die("Could not query: . mysql_error()");
+            if( $result )
+            {
+                while($row = $result->fetch_assoc())
+                {
+                    $data[] = $row;
+                }
+            }
+            return $data;
         }
 
         /**
@@ -50,7 +56,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
          */
         public function __destruct()
         {
-            mysql_close($this->link);
+            mysqli_close($this->link);
         }
 
     }

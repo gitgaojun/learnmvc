@@ -13,12 +13,13 @@ defined("APPPATH") or exit("No direct script access allowed");
         function __construct()
         {
             parent::__construct();
-            $_db = $this->load->database("learnmvc");
+            $this->_db = $this->load->database("learnmvc");
         }
 
         public function isUser( $uName, $uPwd )
         {
-
+            $data = $this->_db->query("select * from l_use");
+            echo json_encode($data);exit;
         }
 
 

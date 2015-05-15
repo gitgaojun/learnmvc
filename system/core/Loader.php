@@ -13,17 +13,31 @@ defined("APPPATH") OR exit("No direct script access allowed");
  */
     class  Loader
     {
-        function __construct()
+        function __construct($pClass)
         {
-            $this->SR =& get_instance();
-            $this->initiative();
-        }
-        private function initiative()
-        {
-            $this->database();
+            $this->initiative($pClass);
+
+            //$this->initiative();
         }
 
-        protected function database( $setDB = "default" )
+        /**
+         * 用来判断需要被引用的接口是哪一个
+         * @param $pClass string
+         */
+        private function initiative($pClass)
+        {
+            //$this->database();
+            if($pClass === "SR_Controller")
+            {
+                $this->_SR =& get_instance();
+            }
+            if($pClass === "SR_Model")
+            {
+                $this->_SR =& get_instance_model();
+            }
+        }
+
+        public function database( $setDB = "default" )
         {
             if(!is_file( APPPATH . "../system/core/Database.php" ))
             {
@@ -43,7 +57,8 @@ defined("APPPATH") OR exit("No direct script access allowed");
             require_once(APPPATH."../application/helpers/".$helperFileName.".php");
             if(class_exists($helperFileName))
             {
-                $this->$helperFileName = new $helperFileName();
+                $name = new $helperFileName;
+                $this->_SR->$helperFileName = $name;
             }
         }
 
@@ -58,7 +73,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
             {
 
                 $name = new $modelFileName;
-                $this->SR->$modelFileName = $name;
+                $this->_SR->$modelFileName = $name;
             }
         }
 
