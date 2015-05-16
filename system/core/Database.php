@@ -43,13 +43,13 @@ defined("APPPATH") OR exit("No direct script access allowed");
             $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
             if( $result )
             {
-                if($result->fetch_assoc() == NULL)
-                {
-                   return array();
-                }
                 while($row = $result->fetch_assoc())
                 {
                     $data[] = $row;
+                }
+                if($row==null)
+                {
+                    return array();
                 }
             }
             if(count($data) == 1 )
