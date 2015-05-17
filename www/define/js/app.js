@@ -8,8 +8,8 @@ $(document).ready(function(){
 
         //单击的时候先检查用户是否登录
         //如果没有登录那么跳转登录注册页面
-        var $cookie = document.cookie;
-        if($cookie["uName"] == undefined){
+        var $useId = $(".use_id").val();
+        if($useId){
             window.location.href="/login/index";
         }
     });
