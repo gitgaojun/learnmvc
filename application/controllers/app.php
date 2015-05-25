@@ -20,7 +20,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
 
             $data['title'] = "Sparrow-shop";
-
+            $data['u_name'] = isset($_SESSION['u_name'])?$_SESSION['u_name']:"游客";
+            $data['u_id'] = isset($_SESSION['u_id'])?$_SESSION['u_id']:0;
             $this->vars($data);
             $this->view("app");
         }

@@ -48,6 +48,10 @@ defined("APPPATH") OR exit("No direct script access allowed");
                     $data[] = $row;
                 }
             }
+            if(!isset($data))
+            {
+                return array();
+            }
             if(count($data) == 1 )
             {
                 return $data[0];
