@@ -45,7 +45,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 exit;
             }
             require_once( APPPATH . "../system/core/Database.php" );
-            return new DB();
+            return new DB($setDB);
         }
 
         public function helper($helperFileName)

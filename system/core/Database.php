@@ -60,6 +60,17 @@ defined("APPPATH") OR exit("No direct script access allowed");
         }
 
         /**
+         * 插入数据
+         * @param $sql
+         * @return bool|mysqli_result
+         */
+        public function into($sql)
+        {
+            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
+            return $result;
+        }
+
+        /**
          * 销毁数据库连接
          */
         public function __destruct()

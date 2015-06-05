@@ -19,3 +19,11 @@ defined("APPPATH") OR exit("No direct script access allowed");
         "database"     =>       "learnmvc",
         "charset"      =>       "utf-8",
     );
+    $database["test"] = array(
+        "host"              =>       "127.0.0.1",
+        "port"              =>       "3306",
+        "user"              =>       "root",
+        "pwd"               =>       "123456",
+        "database"         =>        "test",
+        "charset"          =>        "utf-8",
+    );
