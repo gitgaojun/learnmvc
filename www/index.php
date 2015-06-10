@@ -34,3 +34,6 @@ session_start();
 
 
 require_once(SYSPATH."core/Sparrow.php");
+
+//销毁session
+session_destroy();
