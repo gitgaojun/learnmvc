@@ -1,5 +1,6 @@
 <?php
 defined("APPPATH") OR exit("No direct script access allowed");
+header('Transfer-Encoding:Identity');// 设置字符编码
 /**
  * Created by PhpStorm.
  * User: jun90610@gmail.com
