@@ -20,6 +20,9 @@ defined("APPPATH") OR exit("No direct script access allowed");
             ini_set("display",0);
         break;
     }
+
+    ini_set('zlib.output_compression', 1);//开启gzip压缩 ,提速
+
     require_once("Exception.php");//定义的异常处理的方法
     require_once("Controller.php");
     function &get_instance()
