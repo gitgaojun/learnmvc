@@ -10,7 +10,7 @@ $(document).ready(function(){
         //如果没有登录那么跳转登录注册页面
         var $useId = $(".use_id").val();
         if($useId){
-            window.location.href="/login/index";
+            window.location.href="/user/index";
         }
     });
 });

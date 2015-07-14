@@ -71,6 +71,15 @@ defined("APPPATH") OR exit("No direct script access allowed");
         }
 
         /**
+         * 插入数据,给的数据是数组和一个表名
+         *
+         */
+        public function insert()
+        {
+            
+        }
+
+        /**
          * 销毁数据库连接
          */
         public function __destruct()

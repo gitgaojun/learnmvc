@@ -35,7 +35,14 @@ header('Transfer-Encoding:Identity');// 设置字符编码
     {
         return SR_Model::get_instance_model();
     }
+
+    require_once('Uri.php');
+    $_URI = new Uri();
+    exit;
+
+
     $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
+    var_dump($_URI);exit;
     if(count($_URI) >= 2 )
     {
         $_class_name = $_URI["0"];
