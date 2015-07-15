@@ -38,22 +38,9 @@ header('Transfer-Encoding:Identity');// 设置字符编码
 
     require_once('Uri.php');
     $_URI = new Uri();
-    exit;
-
-
-    $_URI = explode("/", ltrim(str_replace("/index.php", "", $_SERVER["REQUEST_URI"]),"/") );
-    var_dump($_URI);exit;
-    if(count($_URI) >= 2 )
-    {
-        $_class_name = $_URI["0"];
-        $_fun_name = $_URI["1"]?$_URI["1"]:"index";
-    }
-    else
-    {
-        $_class_name = "app";
-        $_fun_name = "index";
-    }
-    //var_dump($_URI, $_class_name, $_fun_name);exit;
+    $uri = $_URI->init();
+    $_class_name = $uri['c'];
+    $_fun_name = $uri['m'];
 
     require_once(CPATH.$_class_name.".php");
 
