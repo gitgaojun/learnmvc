@@ -72,11 +72,26 @@ defined("APPPATH") OR exit("No direct script access allowed");
 
         /**
          * 插入数据,给的数据是数组和一个表名
-         *
+         * @author jun
+         * @access public
+         * @param array $data 插入的数据数组      array('column'=>'value',
+         *                                              .........
+         *                                          )
+         * @param sting $table 表名
+         * return false|int    正确返回插入的主键号码，错误返回false
          */
-        public function insert()
+        public function insert( $data , $table )
         {
-            
+            $keys = array_keys($data);
+
+            $keys_str = implode(',',$keys);
+            $vals = array_values($data);
+            $vals_str = implode(',', $vals );
+            $sql = 'insert into ' . $table . ' ('.$keys_str.') value ( '.$vals_str.' )';
+            var_dump($sql);exit;
+            $result = $this->query($sql);
+            var_export($result);exit;
+
         }
 
         /**

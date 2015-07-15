@@ -26,7 +26,8 @@ defined("APPPATH") or exit("No direct script access allowed");
         public function signOn( $user_name , $user_pwd )
         {
             $result = array('status'=>false, 'msg'=>'', 'code'=>10088, 'data'=>array());
-            $this->_db->insert();
+            $data = array('u_name'=>$user_name,'u_pwd'=>$user_pwd);
+            $insert_id = $this->_db->insert( $data, 'l_use' );
             return $result;
         }
     }

@@ -10,8 +10,8 @@ defined("APPPATH") OR exit("No direct script access allowed");
     /**
      * 设置数据库的配置信息
      */
-    $databaseName = "default";
-    $database["default"] = array(
+    $databaseName = "learnmvc";
+    $database["learnmvc"] = array(
         "host"          =>      "127.0.0.1",
         "port"          =>      "3306",
         "user"          =>      "root",

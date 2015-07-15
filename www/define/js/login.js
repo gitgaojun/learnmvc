@@ -1,7 +1,9 @@
 /**
  * Created by jun90610@gmail.com on 2015/4/25.
  */
-
+function getCodeImage(){
+    $('#codeImage').attr("src","/user/adCode.html?num="+Math.random());
+}
 $(document).ready(function(){
     $(".login-sub").bind("click", function(){
         var $uName = $("#uName").val();
@@ -48,7 +50,5 @@ $(document).ready(function(){
 
     });
 
-    function getCodeImage(){
-        $('#codeImage').attr("src","/login/adCode?num="+Math.random());
-    }
+
 });

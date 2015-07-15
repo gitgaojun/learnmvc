@@ -1,9 +1,18 @@
 /**
  * Created by jun90610@gmail.com on 2015/7/15.
  */
+/******************验证码************************************/
+function getCodeImage(){
+    $('#codeImage').attr("src","/user/adCode.html?num="+Math.random());
+}
 $(document).ready(function() {//利用jquery在写在里面
+
     $('#sub_btn').bind('click', function () {
 
+        /**************设置ajax同步*************************************************/
+        $.ajaxSetup({
+            async : false
+        });
         var user_name = $('#user_name').val(),
             user_pwd = $('#user_pwd').val(),
             user_code = $('#user_code').val(),
@@ -59,7 +68,7 @@ $(document).ready(function() {//利用jquery在写在里面
             url: "/user/sign.html",
             type: "post",
             dataType: "json",
-            data: "user_name="+user_name+"user_pwd="+user_pwd,
+            data: "user_name="+user_name+"&user_pwd="+user_pwd,
             success: function (data) {
                 if (data.status) {
                     alert('ok');return false;
@@ -70,5 +79,7 @@ $(document).ready(function() {//利用jquery在写在里面
             }
         });
     });
+
+
 
 });
