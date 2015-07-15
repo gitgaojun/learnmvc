@@ -86,12 +86,60 @@ defined("APPPATH") or exit("No direct script access allowed");
          */
         public function sign()
         {
+            $result = array('status' => false, 'msg'=>'', 'code' => '80015', 'data' => array());
             $rel = empty($_GET['rel'])?'':addslashes(trim($_GET['rel']));
             if($rel !== '')
             {
                 $this->view("sign");
             }
+            else
+            {
+                $user_name = empty($_POST['user_name'])?'':addslashes( trim($_POST['user_name']) );
+                $user_pwd  = empty($_POST['user_pwd'])?'':addslashes( trim($_POST['user_pwd']) );
+                if( $user_name === '' )
+                {
+                    $result['msg'] = '用户名不能为空';
+                    exit(json_encode($result));
+                }
+                if( $user_pwd === '' )
+                {
+                    $result['msg'] = '密码不能为空';
+                    exit(json_encode($result));
+                }
+                ################md5加密密码##############################################################
+                $user_pwd = md5($user_pwd);
+                $this->load->model('M_sign');
+                $re = $this->M_sign->signOn( $user_name, $user_pwd );
+                if ( !$re['status'] )
+                {
+                    $result['status'] = false;
+                }
+                else
+                {
+                    $result['status'] = true;
+                }
+                exit(json_encode($result));
+            }
+
         }
 
+        /**
+         * 注册页面验证码验证
+         */
+        public function signCode()
+        {
+            $result = array('status' => false, 'msg'=>'', 'code' => '80015', 'data' => array());
+            $code = empty($_POST['code'])?'':trim($_POST['code']);
+            if( strtolower($code) === strtolower($_SESSION['adCodeText']) )
+            {
+                $result['status'] = true;
+                exit(json_encode($result));
+            }
+            else
+            {
+                exit(json_encode($result));
+            }
+
+        }
 
     }

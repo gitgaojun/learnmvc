@@ -23,3 +23,19 @@ li{
     height:400px;
     margin:0 auto;
 }
+.si_title > a{
+    display:block;
+    width:50px;
+    height:30px;
+    font-size:16px;
+    line-height:30px;
+    margin:0 auto;
+    color:blue;
+}
+.sub_btn{
+    display:block;
+    width:50px;
+    height:20px;
+    line-height:20px;
+    bg-color:blue;
+}
