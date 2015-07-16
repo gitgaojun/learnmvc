@@ -40,7 +40,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
 
         public function query($sql)
         {
-            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
+            $result = $this->_query($sql);
             if( $result )
             {
                 while($row = $result->fetch_assoc())
@@ -60,14 +60,13 @@ defined("APPPATH") OR exit("No direct script access allowed");
         }
 
         /**
-         * 插入数据
-         * @param $sql
-         * @return bool|mysqli_result
+         * 对接数据库，执行发送sql语句来操作数据库
+         * @param sting $sql
+         * @return bool
          */
-        public function into($sql)
+        private function _query($sql)
         {
-            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
-            return $result;
+            return mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
         }
 
         /**
@@ -78,20 +77,32 @@ defined("APPPATH") OR exit("No direct script access allowed");
          *                                              .........
          *                                          )
          * @param sting $table 表名
-         * return false|int    正确返回插入的主键号码，错误返回false
+         * @return false|int    正确返回插入的主键号码，错误返回false
          */
-        public function insert( $data , $table )
+        public function autoInsert( $data , $table )
         {
-            $keys = array_keys($data);
-
-            $keys_str = implode(',',$keys);
-            $vals = array_values($data);
-            $vals_str = implode(',', $vals );
-            $sql = 'insert into ' . $table . ' ('.$keys_str.') value ( '.$vals_str.' )';
-            var_dump($sql);exit;
-            $result = $this->query($sql);
-            var_export($result);exit;
-
+            $field = '';
+            $vdata = '';
+            while(list( $k , $v ) = each($data))
+            {
+                if(empty($field))
+                {
+                    $field .= '`'.$k.'`';
+                    $vdata .= '"'.$v.'"';
+                }
+                else
+                {
+                    $field .= ',`'.$k.'`';
+                    $vdata .= ',"'.$v.'"';
+                }
+            }
+            $sql = 'insert into ' . $table . ' (' . $field . ') value (' . $vdata . ')';
+            $result = $this->_query( $sql );
+            if($result)
+            {
+                $result = mysqli_insert_id($this->link);
+            }
+            return $result;
         }
 
         /**

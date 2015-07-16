@@ -27,7 +27,11 @@ defined("APPPATH") or exit("No direct script access allowed");
         {
             $result = array('status'=>false, 'msg'=>'', 'code'=>10088, 'data'=>array());
             $data = array('u_name'=>$user_name,'u_pwd'=>$user_pwd);
-            $insert_id = $this->_db->insert( $data, 'l_use' );
+            $insert_id = $this->_db->autoInsert( $data, 'l_use' );
+            if(intval($insert_id) > 0)
+            {
+                $result['status'] = true;
+            }
             return $result;
         }
     }
