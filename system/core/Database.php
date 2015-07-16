@@ -61,6 +61,8 @@ defined("APPPATH") OR exit("No direct script access allowed");
 
         /**
          * 对接数据库，执行发送sql语句来操作数据库
+         * @author jun
+         * @access private
          * @param sting $sql
          * @return bool
          */
