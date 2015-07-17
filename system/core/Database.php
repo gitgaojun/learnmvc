@@ -108,6 +108,77 @@ defined("APPPATH") OR exit("No direct script access allowed");
         }
 
         /**
+         * 删除数据
+         * @param string $table 表名
+         * @param array $data
+         * @explam                  array('l_name' => 'jun'
+         *                                  ......
+         *
+         *                          )
+         * @return bool
+         */
+        public function delete( $table , $data )
+        {
+            $wdata = '';
+            while( list($column,$value) = each($data) )
+            {
+                if(empty($wdata))
+                {
+                    $wdata .= '`' . $column . '`="' . addslashes($value) . '" ';
+                }
+                else
+                {
+                    $wdata .= 'and `' . $column . '`="' . addslashes($value) . '" ';
+                }
+            }
+            $sql = 'delete from ' . $table . ' where ' . $wdata;
+            $result = $this->_query( $sql );
+            return $result;
+        }
+
+        /**
+         * 更新数据
+         * @author jun
+         * @access public
+         * @param string $table 表名
+         * @param array $data           array('l_name' => 'jun' , .... );
+         * @param array $wdata          array('l_name' => 'jun' , .... );
+         * @return bool
+         */
+        public function update($table , $data , $wdata)
+        {
+            $set_data = '';
+            $w_data = '';
+            while( list($sk,$sv) = $data )
+            {
+                if(empty($set_data))
+                {
+                    $set_data .= '`' . $sk . '`="' . $sv . '" ';
+                }
+                else
+                {
+                    $set_data .= 'and `' . $sk . '`="' . $sv . '" ';
+                }
+            }
+            while( list($wk, $wv) = $wdata )
+            {
+                if(empty($w_data))
+                {
+                    $w_data .= '`' . $wk . '`="' . $wv . '" ';
+                }
+                else
+                {
+                    $w_data .= 'and`' . $wk . '`="' . $wv . '" ';
+                }
+            }
+            $sql = 'update ' . $table . ' set ' . $set_data . ' where ' . $w_data;
+            $result = $this->_query( $sql );
+            return $result;
+        }
+
+
+
+        /**
          * 销毁数据库连接
          */
         public function __destruct()
