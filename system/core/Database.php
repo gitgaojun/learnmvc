@@ -108,7 +108,9 @@ defined("APPPATH") OR exit("No direct script access allowed");
         }
 
         /**
-         * 删除数据
+		 * 删除数据
+		 * @author jun
+		 * @access public
          * @param string $table 表名
          * @param array $data
          * @explam                  array('l_name' => 'jun'
