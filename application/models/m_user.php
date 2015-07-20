@@ -6,7 +6,7 @@ defined("APPPATH") or exit("No direct script access allowed");
      * Class M_sign
      * 用于用户登录的操作
      */
-    class M_sign extends SR_Model
+    class M_user extends SR_Model
     {
         function __construct()
         {
@@ -14,6 +14,29 @@ defined("APPPATH") or exit("No direct script access allowed");
             $this->_db = $this->load->database("learnmvc");
         }
 
+        /**
+         * 判断用户是否存在如果存在那么就返回一个列表并且在里面中写入session数组保存
+         * @param $uName string
+         * @param $uPwd sting
+         * @return array
+         */
+        public function isUser( $uName, $uPwd )
+        {
+            //获取用户数据
+            $data = $this->_db->query( " SELECT * FROM `l_use` WHERE u_name='" . $uName . "' and `u_pwd`='".$uPwd."'" );
+            if ( empty($data) )
+            {
+                return $data;
+            }
+            ############更新用户数据#################################################################################
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //设置用户数据为session
+            $_SESSION['user'] = $data['u_name'];
+            $_SESSION['userId'] = $data['u_id'];
+            return $data;
+        }
 
         /**
          * 注册用户数据入库

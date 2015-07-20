@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4113c7d5-997a-47ea-b157-01ea826857e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_sign.php" afterPath="$PROJECT_DIR$/application/models/m_sign.php" />
+      <change type="DELETED" beforePath="D:\code\learnmvc\application\models\m_login.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\code\learnmvc\application\models\m_sign.php" afterPath="$PROJECT_DIR$/application/models/m_user.php" />
     </list>
     <ignored path="learnmvc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,20 +33,21 @@
       <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/core/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.068966" vertical-offset="3223" max-vertical-offset="4312">
-              <caret line="169" column="17" selection-start-line="169" selection-start-column="17" selection-end-line="169" selection-end-column="17" />
+            <state vertical-scroll-proportion="-17.068966" vertical-offset="3267" max-vertical-offset="4356">
+              <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
               <folding>
-                <marker date="1437106941490" expanded="true" signature="2905:2917" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="2905:2933" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="2905:2948" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="2905:2956" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="2905:2971" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="2905:2972" placeholder="insert into ..." />
-                <marker date="1437106941490" expanded="true" signature="3937:3949" placeholder="delete from ..." />
-                <marker date="1437106941490" expanded="true" signature="3937:3969" placeholder="delete from ..." />
-                <marker date="1437106941490" expanded="true" signature="3937:3970" placeholder="delete from ..." />
-                <marker date="1437106941490" expanded="true" signature="3937:3971" placeholder="delete from ..." />
-                <marker date="1437106941490" expanded="true" signature="3937:3980" placeholder="delete from ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2917" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2933" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2948" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2956" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2971" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="2905:2972" placeholder="insert into ..." />
+                <marker date="1437360934333" expanded="true" signature="3178:3484" placeholder=" 删除数据 ..." />
+                <marker date="1437360934333" expanded="true" signature="3968:3980" placeholder="delete from ..." />
+                <marker date="1437360934333" expanded="true" signature="3968:4000" placeholder="delete from ..." />
+                <marker date="1437360934333" expanded="true" signature="3968:4001" placeholder="delete from ..." />
+                <marker date="1437360934333" expanded="true" signature="3968:4002" placeholder="delete from ..." />
+                <marker date="1437360934333" expanded="true" signature="3968:4011" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
@@ -65,19 +68,21 @@
       <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.793103" vertical-offset="2013" max-vertical-offset="3300">
-              <caret line="111" column="43" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="43" />
+            <state vertical-scroll-proportion="-7.206897" vertical-offset="979" max-vertical-offset="3300">
+              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="m_sign.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/models/m_sign.php">
+      <file leaf-file-name="m_user.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/models/m_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6" vertical-offset="209" max-vertical-offset="1034">
-              <caret line="32" column="76" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
-              <folding />
+            <state vertical-scroll-proportion="0.3881163" vertical-offset="111" max-vertical-offset="1540">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+              <folding>
+                <marker date="1437361641926" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,7 +124,6 @@
         <option value="$PROJECT_DIR$/application/helpers/code_helper.php" />
         <option value="$PROJECT_DIR$/system/core/Exception.php" />
         <option value="$PROJECT_DIR$/system/core/Model.php" />
-        <option value="$PROJECT_DIR$/application/models/m_login.php" />
         <option value="$PROJECT_DIR$/www/index.php" />
         <option value="$PROJECT_DIR$/www/define/views/test.html" />
         <option value="$PROJECT_DIR$/system/core/Loader.php" />
@@ -134,13 +138,15 @@
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/www/define/views/login.html" />
         <option value="$PROJECT_DIR$/www/define/css/sign.css" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/www/define/views/sign.html" />
         <option value="$PROJECT_DIR$/www/define/js/sign.js" />
         <option value="$PROJECT_DIR$/www/define/js/login.js" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
         <option value="$PROJECT_DIR$/system/core/Database.php" />
         <option value="$PROJECT_DIR$/application/models/m_sign.php" />
+        <option value="$PROJECT_DIR$/application/models/m_login.php" />
+        <option value="$PROJECT_DIR$/application/models/m_user.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
       </list>
     </option>
   </component>
@@ -718,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4" vertical-offset="0" max-vertical-offset="990">
-          <caret line="15" column="59" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/m_test.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5551515" vertical-offset="642" max-vertical-offset="1496">
@@ -732,7 +731,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/system/core/Uri.php">
+    <entry file="file://$PROJECT_DIR$/system/core/uri.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.06666667" vertical-offset="539" max-vertical-offset="1562">
           <caret line="22" column="28" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="28" />
@@ -777,20 +776,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.068966" vertical-offset="3223" max-vertical-offset="4312">
-          <caret line="169" column="17" selection-start-line="169" selection-start-column="17" selection-end-line="169" selection-end-column="17" />
+        <state vertical-scroll-proportion="-17.068966" vertical-offset="3267" max-vertical-offset="4356">
+          <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
           <folding>
-            <marker date="1437106941490" expanded="true" signature="2905:2917" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="2905:2933" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="2905:2948" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="2905:2956" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="2905:2971" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="2905:2972" placeholder="insert into ..." />
-            <marker date="1437106941490" expanded="true" signature="3937:3949" placeholder="delete from ..." />
-            <marker date="1437106941490" expanded="true" signature="3937:3969" placeholder="delete from ..." />
-            <marker date="1437106941490" expanded="true" signature="3937:3970" placeholder="delete from ..." />
-            <marker date="1437106941490" expanded="true" signature="3937:3971" placeholder="delete from ..." />
-            <marker date="1437106941490" expanded="true" signature="3937:3980" placeholder="delete from ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2917" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2933" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2948" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2956" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2971" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="2905:2972" placeholder="insert into ..." />
+            <marker date="1437360934333" expanded="true" signature="3178:3484" placeholder=" 删除数据 ..." />
+            <marker date="1437360934333" expanded="true" signature="3968:3980" placeholder="delete from ..." />
+            <marker date="1437360934333" expanded="true" signature="3968:4000" placeholder="delete from ..." />
+            <marker date="1437360934333" expanded="true" signature="3968:4001" placeholder="delete from ..." />
+            <marker date="1437360934333" expanded="true" signature="3968:4002" placeholder="delete from ..." />
+            <marker date="1437360934333" expanded="true" signature="3968:4011" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -815,17 +815,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.793103" vertical-offset="2013" max-vertical-offset="3300">
-          <caret line="111" column="43" selection-start-line="111" selection-start-column="37" selection-end-line="111" selection-end-column="43" />
+        <state vertical-scroll-proportion="-7.206897" vertical-offset="979" max-vertical-offset="3300">
+          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/m_sign.php">
+    <entry file="file://$PROJECT_DIR$/application/models/m_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6" vertical-offset="209" max-vertical-offset="1034">
-          <caret line="32" column="76" selection-start-line="32" selection-start-column="76" selection-end-line="32" selection-end-column="76" />
-          <folding />
+        <state vertical-scroll-proportion="0.3881163" vertical-offset="111" max-vertical-offset="1540">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <marker date="1437361641926" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
+          </folding>
         </state>
       </provider>
     </entry>
