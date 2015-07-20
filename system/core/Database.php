@@ -41,7 +41,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
         public function query($sql)
         {
             $result = $this->_query($sql);
-            if( $result )
+            if( is_object($result) )
             {
                 while($row = $result->fetch_assoc())
                 {
