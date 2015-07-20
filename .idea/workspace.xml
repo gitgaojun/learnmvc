@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4113c7d5-997a-47ea-b157-01ea826857e9" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\code\learnmvc\application\models\m_login.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/define/cache/d2a57dc1d883fd21fb9951699df71cc7.html" afterPath="$PROJECT_DIR$/www/define/cache/d2a57dc1d883fd21fb9951699df71cc7.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/define/js/login.js" afterPath="$PROJECT_DIR$/www/define/js/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/m_user.php" afterPath="$PROJECT_DIR$/application/models/m_user.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\code\learnmvc\application\models\m_sign.php" afterPath="$PROJECT_DIR$/application/models/m_user.php" />
     </list>
     <ignored path="learnmvc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,21 +33,20 @@
       <file leaf-file-name="Database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/system/core/Database.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.068966" vertical-offset="3267" max-vertical-offset="4356">
-              <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
+            <state vertical-scroll-proportion="-14.413794" vertical-offset="726" max-vertical-offset="4686">
+              <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
               <folding>
-                <marker date="1437360934333" expanded="true" signature="2905:2917" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="2905:2933" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="2905:2948" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="2905:2956" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="2905:2971" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="2905:2972" placeholder="insert into ..." />
-                <marker date="1437360934333" expanded="true" signature="3178:3484" placeholder=" 删除数据 ..." />
-                <marker date="1437360934333" expanded="true" signature="3968:3980" placeholder="delete from ..." />
-                <marker date="1437360934333" expanded="true" signature="3968:4000" placeholder="delete from ..." />
-                <marker date="1437360934333" expanded="true" signature="3968:4001" placeholder="delete from ..." />
-                <marker date="1437360934333" expanded="true" signature="3968:4002" placeholder="delete from ..." />
-                <marker date="1437360934333" expanded="true" signature="3968:4011" placeholder="delete from ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3476" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3492" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3507" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3515" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3530" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="3464:3531" placeholder="insert into ..." />
+                <marker date="1437372902341" expanded="true" signature="4536:4548" placeholder="delete from ..." />
+                <marker date="1437372902341" expanded="true" signature="4536:4568" placeholder="delete from ..." />
+                <marker date="1437372902341" expanded="true" signature="4536:4569" placeholder="delete from ..." />
+                <marker date="1437372902341" expanded="true" signature="4536:4570" placeholder="delete from ..." />
+                <marker date="1437372902341" expanded="true" signature="4536:4579" placeholder="delete from ..." />
               </folding>
             </state>
           </provider>
@@ -65,11 +64,23 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/define/views/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.413794" vertical-offset="0" max-vertical-offset="638">
+              <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+              <folding>
+                <element signature="n#style#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.206897" vertical-offset="979" max-vertical-offset="3300">
-              <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+            <state vertical-scroll-proportion="-9.412699" vertical-offset="243" max-vertical-offset="3300">
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,10 +89,10 @@
       <file leaf-file-name="m_user.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/models/m_user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3881163" vertical-offset="111" max-vertical-offset="1540">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.16561314" vertical-offset="331" max-vertical-offset="1738">
+              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
               <folding>
-                <marker date="1437361641926" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
+                <marker date="1437363898571" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
               </folding>
             </state>
           </provider>
@@ -90,8 +101,18 @@
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/define/js/login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
-              <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1320">
+              <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/define/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506">
+              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -140,13 +161,13 @@
         <option value="$PROJECT_DIR$/www/define/css/sign.css" />
         <option value="$PROJECT_DIR$/www/define/views/sign.html" />
         <option value="$PROJECT_DIR$/www/define/js/sign.js" />
-        <option value="$PROJECT_DIR$/www/define/js/login.js" />
         <option value="$PROJECT_DIR$/application/config/database.php" />
-        <option value="$PROJECT_DIR$/system/core/Database.php" />
         <option value="$PROJECT_DIR$/application/models/m_sign.php" />
         <option value="$PROJECT_DIR$/application/models/m_login.php" />
-        <option value="$PROJECT_DIR$/application/models/m_user.php" />
         <option value="$PROJECT_DIR$/application/controllers/user.php" />
+        <option value="$PROJECT_DIR$/application/models/m_user.php" />
+        <option value="$PROJECT_DIR$/www/define/js/login.js" />
+        <option value="$PROJECT_DIR$/system/core/Database.php" />
       </list>
     </option>
   </component>
@@ -274,24 +295,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="define" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learnmvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="learnmvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -661,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/define/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/define/views/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="330">
@@ -738,13 +734,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/define/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16256158" vertical-offset="0" max-vertical-offset="812">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/define/css/sign.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.40749416" vertical-offset="114" max-vertical-offset="1012">
@@ -774,23 +763,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/define/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="506">
+          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/system/core/Database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.068966" vertical-offset="3267" max-vertical-offset="4356">
-          <caret line="171" column="17" selection-start-line="171" selection-start-column="17" selection-end-line="171" selection-end-column="17" />
+        <state vertical-scroll-proportion="-14.413794" vertical-offset="726" max-vertical-offset="4686">
+          <caret line="52" column="31" selection-start-line="52" selection-start-column="31" selection-end-line="52" selection-end-column="31" />
           <folding>
-            <marker date="1437360934333" expanded="true" signature="2905:2917" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="2905:2933" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="2905:2948" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="2905:2956" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="2905:2971" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="2905:2972" placeholder="insert into ..." />
-            <marker date="1437360934333" expanded="true" signature="3178:3484" placeholder=" 删除数据 ..." />
-            <marker date="1437360934333" expanded="true" signature="3968:3980" placeholder="delete from ..." />
-            <marker date="1437360934333" expanded="true" signature="3968:4000" placeholder="delete from ..." />
-            <marker date="1437360934333" expanded="true" signature="3968:4001" placeholder="delete from ..." />
-            <marker date="1437360934333" expanded="true" signature="3968:4002" placeholder="delete from ..." />
-            <marker date="1437360934333" expanded="true" signature="3968:4011" placeholder="delete from ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3476" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3492" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3507" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3515" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3530" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="3464:3531" placeholder="insert into ..." />
+            <marker date="1437372902341" expanded="true" signature="4536:4548" placeholder="delete from ..." />
+            <marker date="1437372902341" expanded="true" signature="4536:4568" placeholder="delete from ..." />
+            <marker date="1437372902341" expanded="true" signature="4536:4569" placeholder="delete from ..." />
+            <marker date="1437372902341" expanded="true" signature="4536:4570" placeholder="delete from ..." />
+            <marker date="1437372902341" expanded="true" signature="4536:4579" placeholder="delete from ..." />
           </folding>
         </state>
       </provider>
@@ -805,28 +801,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/define/js/login.js">
+    <entry file="file://$PROJECT_DIR$/www/define/views/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
-          <caret line="22" column="9" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding />
+        <state vertical-scroll-proportion="-14.413794" vertical-offset="0" max-vertical-offset="638">
+          <caret line="19" column="24" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.206897" vertical-offset="979" max-vertical-offset="3300">
-          <caret line="54" column="46" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state vertical-scroll-proportion="-9.412699" vertical-offset="243" max-vertical-offset="3300">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/define/js/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1320">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/m_user.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3881163" vertical-offset="111" max-vertical-offset="1540">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.16561314" vertical-offset="331" max-vertical-offset="1738">
+          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
           <folding>
-            <marker date="1437361641926" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
+            <marker date="1437363898571" expanded="true" signature="594:669" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>

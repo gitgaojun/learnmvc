@@ -30,7 +30,7 @@ $(document).ready(function(){
             return false;
         }
         $.ajax({
-            url:"/login/isUser",
+            url:"/user/isUser",
             type:"post",
             dataType:"json",
             data:$formData,
