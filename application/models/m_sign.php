@@ -26,7 +26,12 @@ defined("APPPATH") or exit("No direct script access allowed");
         public function signOn( $user_name , $user_pwd )
         {
             $result = array('status'=>false, 'msg'=>'', 'code'=>10088, 'data'=>array());
-            $data = array('u_name'=>$user_name,'u_pwd'=>$user_pwd);
+            $data = array(
+                'u_name'    =>  $user_name,                 // 用户名
+                'u_pwd'     =>  $user_pwd,                  // 用户密码
+                'u_addtime' =>  date(time()),               // 注册时间
+                'u_addip'   =>  $_SERVER['REMOTE_ADDR'],    // 浏览当前页面的用户ip地址
+            );
             $insert_id = $this->_db->autoInsert( $data, 'l_use' );
             if(intval($insert_id) > 0)
             {
