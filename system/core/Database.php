@@ -79,12 +79,16 @@ defined("APPPATH") OR exit("No direct script access allowed");
          *                                              .........
          *                                          )
          * @param sting $table 表名
+         * @param array $wdata 条件数组          array('column'=>'value',
+         *                                              .........
+         *                                          )
          * @return false|int    正确返回插入的主键号码，错误返回false
          */
-        public function autoInsert( $data , $table )
+        public function autoInsert( $data , $table , $wdata)
         {
             $field = '';
             $vdata = '';
+            $wlist = '';
             while(list( $k , $v ) = each($data))
             {
                 if(empty($field))
@@ -98,7 +102,18 @@ defined("APPPATH") OR exit("No direct script access allowed");
                     $vdata .= ',"'.$v.'"';
                 }
             }
-            $sql = 'insert into ' . $table . ' (' . $field . ') value (' . $vdata . ')';
+            while ( list($wk, $wv) = each($wlist) )
+            {
+                if ( empty($wlist) )
+                {
+                    $wlist .= ' where '.$wk.'="'.$wv.'" ';
+                }
+                else
+                {
+                    $wlist .= ' and '.$wk.'="'.$wv.'"';
+                }
+            }
+            $sql = 'insert into ' . $table . ' (' . $field . ') value (' . $vdata . ')' . $wlist;
             $result = $this->_query( $sql );
             if($result)
             {
