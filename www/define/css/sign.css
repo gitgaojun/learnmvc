@@ -39,3 +39,23 @@ li{
     line-height:20px;
     bg-color:blue;
 }
+.msg{
+    display:none;
+    width:500px;
+    height:300px;
+}
+.msg > span{
+    font-size:18px;
+    font-weight: bold;
+}
+.h{
+    display:block;
+    margin:0px auto;
+    margin-top:-300px;
+    background-color: rgb(155, 155, 155);
+    width:500px;
+    height:300px;
+    position: relative;
+    z-index: 999;
+    color:white;
+}

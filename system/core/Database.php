@@ -38,6 +38,11 @@ defined("APPPATH") OR exit("No direct script access allowed");
             mysqli_query( $this->link, "SET NAMES 'utf8'");
         }
 
+        /**
+         * 查询语句
+         * @param $sql
+         * @return array
+         */
         public function query($sql)
         {
             $result = $this->_query($sql);

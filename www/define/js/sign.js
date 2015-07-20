@@ -71,7 +71,20 @@ $(document).ready(function() {//利用jquery在写在里面
             data: "user_name="+user_name+"&user_pwd="+user_pwd,
             success: function (data) {
                 if (data.status) {
-                    alert('ok');return false;
+                    /******************5s 的跳转时间*******************************************/
+                    var intervalid;
+                    var i=5;
+                    intervalid = setInterval(function(){
+                        if(i===0){
+                            clearInterval(intervalid);
+                            window.location.href='/user/index.html';
+                        }else{
+                            $(".msg").attr("class","h");
+                            $(".h > span").text("注册成功，系统会自动跳转登录页面("+i+"s)");
+                        }
+                        i--;
+                    }, 1000);
+                    return false;
                 } else {
                     alert('false');return false;
                 }
