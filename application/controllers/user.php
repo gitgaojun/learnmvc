@@ -108,8 +108,8 @@ defined("APPPATH") or exit("No direct script access allowed");
                 }
                 ################md5加密密码##############################################################
                 $user_pwd = md5($user_pwd);
-                $this->load->model('M_sign');
-                $re = $this->M_sign->signOn( $user_name, $user_pwd );
+                $this->load->model('M_user');
+                $re = $this->M_user->signOn( $user_name, $user_pwd );
                 if ( !$re['status'] )
                 {
                     $result['status'] = false;

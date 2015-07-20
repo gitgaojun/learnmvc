@@ -31,7 +31,7 @@ defined("APPPATH") or exit("No direct script access allowed");
             ############更新用户数据#################################################################################
             $data = array(
                 'u_lastip'      =>      $_SERVER['REMOTE_ADDR'],        // 用户登录ip
-                'u_lasttime'    =>      date(time()),                   // 用户登录时间
+                'u_lasttime'    =>      date('Y-m-d H:i:s', time()),                   // 用户登录时间
                 'u_sign_count'  =>      'u_sign_count+1'                // 登录次数
             );
             $wdata = array(
@@ -61,7 +61,7 @@ defined("APPPATH") or exit("No direct script access allowed");
             $data = array(
                 'u_name'    =>  $user_name,                 // 用户名
                 'u_pwd'     =>  $user_pwd,                  // 用户密码
-                'u_addtime' =>  date(time()),               // 注册时间
+                'u_addtime' =>  date('Y-m-d H:i:s', time()),               // 注册时间
                 'u_addip'   =>  $_SERVER['REMOTE_ADDR'],    // 浏览当前页面的用户ip地址
             );
             $insert_id = $this->_db->autoInsert( $data, 'l_use' );

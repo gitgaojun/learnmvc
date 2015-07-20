@@ -84,7 +84,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
          *                                          )
          * @return false|int    正确返回插入的主键号码，错误返回false
          */
-        public function autoInsert( $data , $table , $wdata)
+        public function autoInsert( $data , $table , $wdata=array())
         {
             $field = '';
             $vdata = '';
@@ -102,7 +102,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
                     $vdata .= ',"'.$v.'"';
                 }
             }
-            while ( list($wk, $wv) = each($wlist) )
+            while ( list($wk, $wv) = each($wdata) )
             {
                 if ( empty($wlist) )
                 {
