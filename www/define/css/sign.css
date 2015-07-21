@@ -50,8 +50,7 @@ li{
 }
 .h{
     display:block;
-    margin:0px auto;
-    margin-top:-300px;
+    margin:-300px 0  0 auto;
     background-color: rgb(155, 155, 155);
     width:500px;
     height:300px;

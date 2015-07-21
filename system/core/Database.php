@@ -46,6 +46,19 @@ defined("APPPATH") OR exit("No direct script access allowed");
         public function query($sql)
         {
             $result = $this->_query($sql);
+            return $result;
+        }
+
+        /**
+         * 对接数据库，执行发送sql语句来操作数据库
+         * @author jun
+         * @access private
+         * @param sting $sql
+         * @return bool
+         */
+        private function _query($sql)
+        {
+            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
             if( is_object($result) )
             {
                 while($row = $result->fetch_assoc())
@@ -62,18 +75,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 return $data[0];
             }
             return $data;
-        }
-
-        /**
-         * 对接数据库，执行发送sql语句来操作数据库
-         * @author jun
-         * @access private
-         * @param sting $sql
-         * @return bool
-         */
-        private function _query($sql)
-        {
-            return mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
         }
 
         /**
@@ -198,6 +199,33 @@ defined("APPPATH") OR exit("No direct script access allowed");
             return $result;
         }
 
+        /**
+         * 得到一个栏目的值
+         * @param sting $field column名字
+         * @param string $table 表名
+         * @param array $data   数字
+         * @return bool|int
+         */
+        public function getColumnValue($field, $table, $data)
+        {
+            $wdata = '';
+            while ( list($k, $v) = each($data) )
+            {
+                if(empty($wdata))
+                {
+                    $wdata .= 'where `'.$k.'`="'.$v.'" ';
+                }
+                else
+                {
+                    $wdata .= 'and `'.$k.'`="'.$v.'" ';
+                }
+            }
+            $sql = 'select '.$field.' from '.$table.' '.$wdata;
+            $fieldValue = $this->_query($sql);
+            if(empty($fieldValue)) $result=false;
+            else                   $result=$fieldValue[0][$field];
+            return $result;
+        }
 
 
         /**

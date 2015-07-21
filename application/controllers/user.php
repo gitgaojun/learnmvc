@@ -27,9 +27,9 @@ defined("APPPATH") or exit("No direct script access allowed");
         }
 
         /**
-         * 验证用户信息是否合格
+         * 用户登录
          */
-        public function isUser()
+        public function login()
         {
             $result = array("status"=>false, "code"=>10000, "msg"=>"");
             $uName  =   empty($_POST["uName"])?"":addslashes(trim($_POST["uName"]));
@@ -58,7 +58,13 @@ defined("APPPATH") or exit("No direct script access allowed");
                 exit(json_encode($result));
             }
             $this->load->model("M_user");
-            $result['data'] = $userList = $this->M_user->isUser($uName, $uPwd);
+            $isUse = $this->M_user->isUse($uName);
+            if($isUse['status'])
+            {
+                $result['msg'] = "该用户名已被注册";
+                exit(json_encode($result));
+            }
+            $result['data'] = $userList = $this->M_user->login($uName, $uPwd);
             if(empty($userList))
             {
                 $result['msg'] = "用户名或密码错误";
