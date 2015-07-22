@@ -46,7 +46,15 @@ defined("APPPATH") OR exit("No direct script access allowed");
         public function query($sql)
         {
             $result = $this->_query($sql);
-            return $result;
+            $data = array();
+            if( is_object($result) )
+            {
+                while($row = $result->fetch_assoc())
+                {
+                    $data[] = $row;
+                }
+            }
+            return $data;
         }
 
         /**
@@ -58,20 +66,10 @@ defined("APPPATH") OR exit("No direct script access allowed");
          */
         private function _query($sql)
         {
-            $result = mysqli_query( $this->link , $sql ) or die("Could not query:".mysqli_errno($this->link));
-            if( is_object($result) )
-            {
-                while($row = $result->fetch_assoc())
-                {
-                    $data[] = $row;
-                }
-            }
-            if(!isset($data))
-            {
-                return array();
-            }
-            return $data;
+            $result = mysqli_query($this->link, $sql) or die("Could not query:".mysqli_errno($this->link));
+            return $result;
         }
+
 
         /**
          * 插入数据,给的数据是数组和一个表名
