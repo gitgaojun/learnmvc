@@ -203,7 +203,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 }
             }
             $sql = 'update ' . $table . ' set ' . $set_data . ' where ' . $w_data;
-            echo $sql;exit;
             $result = $this->_query( $sql );
             return $result;
         }
