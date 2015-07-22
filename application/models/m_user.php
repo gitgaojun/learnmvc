@@ -29,7 +29,7 @@ defined("APPPATH") or exit("No direct script access allowed");
                 return $data;
             }
             ############更新用户数据#################################################################################
-            $data = array(
+            $idata = array(
                 'u_lastip'      =>      $_SERVER['REMOTE_ADDR'],        // 用户登录ip
                 'u_lasttime'    =>      date('Y-m-d H:i:s', time()),                   // 用户登录时间
                 'u_sign_count'  =>      'u_sign_count+1'                // 登录次数
@@ -38,9 +38,9 @@ defined("APPPATH") or exit("No direct script access allowed");
                 'u_name'        =>      $uName,                         // 用户名
                 'u_pwd'         =>      $uPwd                           // 用户密码
             );
-            $this->_db->autoInsert($data, 'l_use', $wdata);
+            $a = $this->_db->update('l_use', $idata, $wdata);
             ////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+            echo 4;exit;
             //设置用户数据为session
             $_SESSION['user'] = $data['u_name'];
             $_SESSION['userId'] = $data['u_id'];

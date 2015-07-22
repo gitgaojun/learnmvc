@@ -70,10 +70,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
             {
                 return array();
             }
-            if(count($data) == 1 )
-            {
-                return $data[0];
-            }
             return $data;
         }
 
@@ -172,7 +168,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
         {
             $set_data = '';
             $w_data = '';
-            while( list($sk,$sv) = $data )
+            while( list($sk,$sv) = each($data) )
             {
                 if(empty($set_data))
                 {
@@ -183,7 +179,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
                     $set_data .= 'and `' . $sk . '`="' . $sv . '" ';
                 }
             }
-            while( list($wk, $wv) = $wdata )
+            while( list($wk, $wv) = each($wdata) )
             {
                 if(empty($w_data))
                 {

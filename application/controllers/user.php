@@ -36,7 +36,6 @@ defined("APPPATH") or exit("No direct script access allowed");
             $uPwd   =   empty($_POST["uPwd"])?"":addslashes(trim($_POST["uPwd"]));
             $uCode  =   empty($_POST["uCode"])?"":addslashes(trim($_POST["uCode"]));
             $uPwd = md5($uPwd);
-
             if($uName == "")
             {
                 $result["msg"] = "用户名不能为空";
@@ -58,12 +57,6 @@ defined("APPPATH") or exit("No direct script access allowed");
                 exit(json_encode($result));
             }
             $this->load->model("M_user");
-            $isUse = $this->M_user->isUse($uName);
-            if($isUse['status'])
-            {
-                $result['msg'] = "该用户名已被注册";
-                exit(json_encode($result));
-            }
             $result['data'] = $userList = $this->M_user->login($uName, $uPwd);
             if(empty($userList))
             {
@@ -112,6 +105,15 @@ defined("APPPATH") or exit("No direct script access allowed");
                     $result['msg'] = '密码不能为空';
                     exit(json_encode($result));
                 }
+                ################用户是否已经被注册##############################################################
+                $isUse = $this->M_user->isUse($uName);
+                if($isUse['status'])
+                {
+                    $result['msg'] = "该用户名已被注册";
+                    exit(json_encode($result));
+                }
+                //////////////////////////////////////////////////////////////////////////////////////////////
+
                 ################md5加密密码##############################################################
                 $user_pwd = md5($user_pwd);
                 $this->load->model('M_user');
