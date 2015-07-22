@@ -66,7 +66,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
          */
         private function _query($sql)
         {
-            $result = mysqli_query($this->link, $sql) or die("Could not query:".mysqli_errno($this->link));
+            $result = mysqli_query($this->link, $sql) or die("Could not query:".mysqli_error($this->link));
             return $result;
         }
 
