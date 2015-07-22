@@ -58,7 +58,8 @@ defined("APPPATH") or exit("No direct script access allowed");
             }
             $this->load->model("M_user");
             $result['data'] = $userList = $this->M_user->login($uName, $uPwd);
-            if(empty($userList))
+
+            if( !$userList['status'] )
             {
                 $result['msg'] = "用户名或密码错误";
                 exit(json_encode($result));

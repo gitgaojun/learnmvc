@@ -22,29 +22,33 @@ defined("APPPATH") or exit("No direct script access allowed");
          */
         public function login( $uName, $uPwd )
         {
+            $result = array("status"=>false, "code"=>10000, "msg"=>"", "data"=>array());
             //获取用户数据
             $data = $this->_db->query( " SELECT * FROM `l_use` WHERE u_name='" . $uName . "' and `u_pwd`='".$uPwd."'" );
-            if ( empty($data) )
+            if ( !empty($data) )
             {
-                return $data;
+                ############更新用户数据#################################################################################
+                $idata = array(
+                    'u_lastip'      =>      $_SERVER['REMOTE_ADDR'],        // 用户登录ip
+                    'u_lasttime'    =>      date('Y-m-d H:i:s', time()),                   // 用户登录时间
+                    'u_sign_count'  =>      array('u_sign_count'=>'+1'),     // 登录次数
+                );
+                $wdata = array(
+                    'u_name'        =>      $uName,                         // 用户名
+                    'u_pwd'         =>      $uPwd                           // 用户密码
+                );
+                $result['status'] = $this->_db->update('l_use', $idata, $wdata);
+                ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                //设置用户数据为session
+                if($result['status'])
+                {
+                    $_SESSION['user'] = $data[0]['u_name'];
+                    $_SESSION['userId'] = $data[0]['u_id'];
+                }
+
             }
-            ############更新用户数据#################################################################################
-            $idata = array(
-                'u_lastip'      =>      $_SERVER['REMOTE_ADDR'],        // 用户登录ip
-                'u_lasttime'    =>      date('Y-m-d H:i:s', time()),                   // 用户登录时间
-                'u_sign_count'  =>      'u_sign_count+1'                // 登录次数
-            );
-            $wdata = array(
-                'u_name'        =>      $uName,                         // 用户名
-                'u_pwd'         =>      $uPwd                           // 用户密码
-            );
-            $a = $this->_db->update('l_use', $idata, $wdata);
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////
-            echo 4;exit;
-            //设置用户数据为session
-            $_SESSION['user'] = $data['u_name'];
-            $_SESSION['userId'] = $data['u_id'];
-            return $data;
+            return $result;
         }
 
         /**
