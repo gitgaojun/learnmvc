@@ -170,13 +170,25 @@ defined("APPPATH") OR exit("No direct script access allowed");
             $w_data = '';
             while( list($sk,$sv) = each($data) )
             {
-                if(empty($set_data))
-                {
-                    $set_data .= '`' . $sk . '`="' . $sv . '" ';
+                if(is_array($sv))
+                { //用来给字段自增或者自减,计数用
+                    list($svk, $svv) = each($sv);
+                    if($sk === $svk)
+                    {
+                        $sv = '`'.$svk.'`'.$svv;
+                    }
                 }
                 else
                 {
-                    $set_data .= 'and `' . $sk . '`="' . $sv . '" ';
+                    $sv = '"'.$sv.'"';
+                }
+                if(empty($set_data))
+                {
+                    $set_data .= '`' . $sk . '`=' . $sv . ' ';
+                }
+                else
+                {
+                    $set_data .= ', `' . $sk . '`=' . $sv . ' ';
                 }
             }
             while( list($wk, $wv) = each($wdata) )
@@ -191,8 +203,14 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 }
             }
             $sql = 'update ' . $table . ' set ' . $set_data . ' where ' . $w_data;
+            echo $sql;exit;
             $result = $this->_query( $sql );
             return $result;
+        }
+
+        protected function autocrement()
+        {
+
         }
 
         /**
