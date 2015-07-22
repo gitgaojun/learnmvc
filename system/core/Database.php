@@ -208,10 +208,6 @@ defined("APPPATH") OR exit("No direct script access allowed");
             return $result;
         }
 
-        protected function autocrement()
-        {
-
-        }
 
         /**
          * 得到一个栏目的值
