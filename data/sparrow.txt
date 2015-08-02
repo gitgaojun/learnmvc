@@ -1,0 +1,48 @@
+create database if not exists sparrow;
+use sparrow;
+drop table if exists s_province;
+
+# 创建 省,独立市表
+create table s_province(
+		p_id int auto_increment not null primary key,
+		p_code int not null comment '省,独立市code',
+		p_name varchar(100) not null comment '省,独立市名字'
+		)engine=myisam default charset=utf8 comment='省,独立市表';
+
+
+# 创建 城市表
+drop table if exists s_city;
+create table s_city(
+		c_id int auto_increment not null primary key,
+		c_parent_id int not null comment '城市的上级id',
+		c_name varchar(100) not null comment '城市的名字',
+		c_info varchar(100) not null comment '名字的拼音'
+		)engine=myisam default charset=utf8 comment='城市信息表';
+
+
+# 创建 区域表
+drop table if exists s_regional;
+create table s_regional(
+		r_id int auto_increment not null primary key,
+		r_parent_id int not null comment '所在市的id',
+		r_name varchar(100) not null comment '区域的名字',
+		r_info varchar(100) not null comment '区域的拼音'
+		)engine=myisam default charset=utf8 comment='市区信息表';
+
+# 创建 商圈表
+drop table if exists s_district;
+create table s_district(
+		d_id int auto_increment not null primary key,
+		d_parent_id int not null comment '所在区的id',
+		d_name varchar(100) not null comment '商圈的名字',
+		d_info varchar(100) not null comment '商圈的拼音'
+		)engine=myisam default charset=utf8 comment='商圈信息表';
+
+# 创建 大区表
+drop table if exists s_large;
+create table s_large(
+		l_id int auto_increment not null primary key,
+		l_name varchar(100) not null comment '大区名字',
+		l_code int(1) not null comment '大区code 例如以1开始的省/直辖市就是华北地区'
+		)engine=myisam default charset=utf8 comment='大区信息表';
+insert into s_large (l_name,l_code) values('华北',1),('东北',2),('华东',3),('中南',4),('西南', 5),('西北', 6),('台湾', 7),('港澳',8);

@@ -36,7 +36,7 @@ header('Transfer-Encoding:Identity');// 设置字符编码
         return SR_Model::get_instance_model();
     }
 
-    require_once('Uri.php');
+    require_once('uri.php');
     $_URI = new Uri();
     $uri = $_URI->init();
     $_class_name = $uri['c'];

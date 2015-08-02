@@ -17,8 +17,8 @@ defined("APPPATH") OR exit("No direct script access allowed");
             {
                 exceptionPack("config/database.php is not exist");
             }
-            require_once( APPPATH . "../application/config/database.php" );
-            $this->set = $database[$db];//数据库的配置数组
+			require_once( APPPATH . "../application/config/database.php" );
+			$this->set = $database[$db];//数据库的配置数组
             $this->initiative();
         }
 

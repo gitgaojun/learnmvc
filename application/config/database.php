@@ -12,7 +12,7 @@ defined("APPPATH") OR exit("No direct script access allowed");
      */
     $databaseName = "learnmvc";
     $database["learnmvc"] = array(
-        "host"          =>      "127.0.0.1",
+        "host"          =>      "localhost",
         "port"          =>      "3306",
         "user"          =>      "root",
         "pwd"           =>      "123456",
@@ -20,10 +20,18 @@ defined("APPPATH") OR exit("No direct script access allowed");
         "charset"      =>       "utf-8",
     );
     $database["test"] = array(
-        "host"              =>       "127.0.0.1",
+        "host"              =>       "localhost",
         "port"              =>       "3306",
         "user"              =>       "root",
         "pwd"               =>       "123456",
         "database"         =>        "test",
         "charset"          =>        "utf-8",
-    );
+	);
+	$database['sparrow'] = array(
+		'host'				=>		'localhost',
+		'port'				=>		'3306',
+		'user'				=>		'root',
+		'pwd'				=>		'123456',
+		'database'			=>		'sparrow',
+		'charset'			=>		'utf-8',
+	);

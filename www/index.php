@@ -30,10 +30,10 @@ define("CSSPATH", rtrim(WEB."define/css", "/")."/");
 define("IMAGEPATH", rtrim(WEB."define/img", "/")."/");
 
 //开启session
-session_start();
+//session_start();
 
 
 require_once(SYSPATH."core/Sparrow.php");
 
 //销毁session
-session_destroy();
+//session_destroy();

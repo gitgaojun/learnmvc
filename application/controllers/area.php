@@ -38,6 +38,30 @@ defined("APPPATH") or exit("No direct script access allowed");
             $this->view("province");
         }
 
+		/**
+		 * 更新大区信息
+		 */
+		public function updateLCity()
+		{
+			$page = empty($_GET['attr'])?"":addslashes(trim($_GET['attr']));
+			if( $page !== 'city' )
+			{
+				exit('404 page');
+			}
+			$this->load->model('M_area');
+			$update_lcity_list = $this->M_area->updateLCityList();
+			if( $update_lcity_list['status'] )
+			{
+				$data['msg'] = '插入大区信息成功';
+			}
+			else
+			{
+				$data['msg'] = '插入大区信息失败';
+			}
+			$this->vars($data);
+			$this->view("province");
+		}
+
         /**
          * 更新市信息
          */
@@ -94,17 +118,18 @@ defined("APPPATH") or exit("No direct script access allowed");
          */
         public function updateDistrict()
         {
-            $page = empty($_GET['attr'])?"":addslashes(trim($_GET['attr']));
+			$page = empty($_GET['attr'])?"":addslashes(trim($_GET['attr']));
+			$c_num = empty($_GET['c_num'])?"":intval($_GET['c_num']);
             if( $page!=='district' )
             {
                 exit('404 page');
             }
             $this->load->model('M_area');//echo 3;exit;
-            $update_District_list = $this->M_area->updateDistrictList();
+            $update_District_list = $this->M_area->updateDistrictList($c_num);
 
             if($update_District_list['status'])
             {
-                $data['msg'] = '插入商圈信息成功';
+                $data['msg'] = '插入商圈信息成功  ->  '.$c_num;
             }
             else
             {
