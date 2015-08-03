@@ -16,7 +16,7 @@ defined("APPPATH") or exit("No direct script access allowed");
      * @package user
      * @link    http://www.sparrow.com/user/index.html
      */
-    class user extends SR_Controller
+    class user extends B_user
     {
         function __construct()
         {
@@ -193,7 +193,9 @@ defined("APPPATH") or exit("No direct script access allowed");
          */
         public function Home()
         {
-            echo "~_~~";exit;
+            $data = array();
+            $this->vars($data);
+            $this->view('user');
         }
 
     }
