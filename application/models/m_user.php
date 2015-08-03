@@ -5,6 +5,10 @@ defined("APPPATH") or exit("No direct script access allowed");
     /**
      * Class M_sign
      * 用于用户登录的操作
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package M_user
      */
     class M_user extends SR_Model
     {

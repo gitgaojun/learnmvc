@@ -10,6 +10,10 @@ defined("APPPATH") or exit("No direct script access allowed");
     /**
      * Class M_area
      * 更新city数据
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package M_area
      */
     class M_area extends SR_Controller
     {
@@ -29,6 +33,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新省数据表信息
+         *
+         * @since 2015-8-3
          * @access public
          * @author jun
          * @return array
@@ -63,6 +69,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
 		/**
 		 * 更新大区信息
+         *
+         * @since 2015-8-3
 		 * @access public
 		 * @author jun
 		 * @return array
@@ -100,6 +108,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新市数据表信息
+         *
+         * @since 2015-8-3
          * @access public
          * @author jun
          * @return array
@@ -149,6 +159,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新区信息
+         *
+         * @since 2015-8-3
          * @author jun
          * @access public
          * @return array
@@ -193,6 +205,8 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 获取数据
+         *
+         * @since 2015-8-3
          * @author jun
          * @access protected
          * @param array $data city信息    array('c_id'=>1,'c_name'=>'bj');
@@ -258,6 +272,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新 商圈 的信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @param int $c_num 城市id
          * @return array
          */
         public function updateDistrictList($c_num)
@@ -313,6 +332,10 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 得到商圈信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access protected
          * @param $data
          * @param int $uuid 次数
          * @return array
@@ -390,6 +413,13 @@ defined("APPPATH") or exit("No direct script access allowed");
         /**
          * 抓取页面信息
          * agent cookie 来做的限制是否跳转提示用户操作频繁
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access protected
+         * @param string $url  要访问的地址
+         * @param int $uuid    id值用于动态改变模拟的访问信息来源
+         * @return string      包含网页信息的字符串
          */
         protected function getContent($url, $uuid)
 		{
@@ -421,7 +451,14 @@ defined("APPPATH") or exit("No direct script access allowed");
             return $result;
         }
 
-
+        /**
+         * 获取动态ip地址
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access protected
+         * @return string
+         */
         protected function rand_ip()
         {
             $ip = mt_rand(10,254).'.'.mt_rand(10,254).'.'.mt_rand(10,254).'.'.mt_rand(10,254);

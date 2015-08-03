@@ -7,7 +7,13 @@ defined("APPPATH") or exit("No direct script access allowed");
  * Time: 14:14
  */
 
-
+    /**
+     * Class M_test
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package M_test
+     */
     class M_test extends SR_Model
     {
         function __construct()
@@ -19,6 +25,10 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 插入数据用来测试
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
          * @return bool
          */
         public function inser()
@@ -39,6 +49,10 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 不使用索引的查询
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
          * @return int
          */
         public function getTime()
@@ -52,6 +66,10 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 得到毫秒级的时间
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
          * @return float
          */
         public function getMircoTime()

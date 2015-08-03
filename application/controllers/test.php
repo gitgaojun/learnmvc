@@ -7,10 +7,15 @@ defined("APPPATH") or exit("No direct script access allowed");
  * Time: 14:07
  */
 
-/**
- * Class test
- * 为了测试索引的效果，动态的插入数据1千万来测试
- */
+    /**
+     * Class test
+     * 为了测试索引的效果，动态的插入数据1千万来测试
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package test
+     * @link    http://www.sparrow.com/test/index.html
+     */
     class test extends SR_Controller{
 
         function __construct()
@@ -21,6 +26,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 插入数据 一千万 条
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function index()
         {
@@ -32,6 +42,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 得到sql 查询的时间
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function getTime()
         {

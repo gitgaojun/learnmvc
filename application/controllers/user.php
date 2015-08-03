@@ -10,6 +10,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
     /**
      * 登录类
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package user
+     * @link    http://www.sparrow.com/user/index.html
      */
     class user extends SR_Controller
     {
@@ -19,6 +24,14 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         }
 
+        /**
+         * 登录页面
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
+         */
         public function index()
         {
             $data['title'] = "Sparrow-login 登录页面";
@@ -28,6 +41,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 用户登录
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function login()
         {
@@ -70,6 +88,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 验证码
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function adCode()
         {
@@ -83,6 +106,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 注册页面
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function sign()
         {
@@ -134,6 +162,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 注册页面验证码验证
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function signCode()
         {
@@ -149,6 +182,18 @@ defined("APPPATH") or exit("No direct script access allowed");
                 exit(json_encode($result));
             }
 
+        }
+
+        /**
+         * 用户中心首页
+         * @author jun
+         * @time 2015-8-3
+         * @access public
+         * @return void
+         */
+        public function Home()
+        {
+            echo "~_~~";exit;
         }
 
     }

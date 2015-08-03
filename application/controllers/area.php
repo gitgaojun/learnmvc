@@ -7,6 +7,15 @@ defined("APPPATH") or exit("No direct script access allowed");
  * Time: 10:59
  */
 
+    /**
+     * Class area
+     * 抓取信息
+     *
+     * @since 2015-8-3
+     * @author jun
+     * @package area
+     * @link    http://www.sparrow.com/area/index.html
+     */
     class area extends SR_Controller
     {
         function __construct()
@@ -16,6 +25,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新省信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function index()
         {
@@ -40,6 +54,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
 		/**
 		 * 更新大区信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
 		 */
 		public function updateLCity()
 		{
@@ -64,6 +83,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新市信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function updateCity()
         {
@@ -88,6 +112,11 @@ defined("APPPATH") or exit("No direct script access allowed");
 
         /**
          * 更新区域信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function updateRegional()
         {
@@ -112,9 +141,12 @@ defined("APPPATH") or exit("No direct script access allowed");
         }
 
         /**
-         * @author jun
-         * @time 2015-7-28
          * 更新商圈信息
+         *
+         * @since 2015-8-3
+         * @author jun
+         * @access public
+         * @return void
          */
         public function updateDistrict()
         {

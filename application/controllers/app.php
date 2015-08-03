@@ -7,14 +7,27 @@ defined("APPPATH") or exit("No direct script access allowed");
  * Time: 10:29
  */
 
+    /**
+     * Class app
+     * 购物车控制器
+     *
+     * @since       2015-8-3
+     * @author      jun
+     * @package     Index
+     * @link        http://www.sparrow.com
+     */
     class app extends SR_Controller
     {
+
 
         function __construct()
         {
             parent::__construct();
         }
 
+        /**
+         * 购物车
+         */
         public function index()
         {
 
