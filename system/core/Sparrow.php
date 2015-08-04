@@ -30,10 +30,19 @@ header('Transfer-Encoding:Identity');// 设置字符编码
     {
         return SR_Controller::get_instance();
     }
+
+    /*config.php*/
+    require_once(APPPATH . '../application/config/config.php');
+
     require_once("Model.php");
     function &get_instance_model()
     {
         return SR_Model::get_instance_model();
+    }
+
+    if(file_exists(APPPATH . '../application/core/' . $config['SUB_FIX'] . 'Controller.php'))
+    {
+        require_once(APPPATH . '../application/core/' . $config['SUB_FIX'] . 'Controller.php');
     }
 
     require_once('uri.php');

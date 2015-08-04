@@ -16,7 +16,7 @@ defined("APPPATH") or exit("No direct script access allowed");
      * @package user
      * @link    http://www.sparrow.com/user/index.html
      */
-    class user extends B_user
+    class user extends User_Controller
     {
         function __construct()
         {
@@ -69,6 +69,7 @@ defined("APPPATH") or exit("No direct script access allowed");
                 $result["msg"] = "验证码不能为空";
                 exit(json_encode($result));
             }
+            var_dump($_SESSION);exit;
             if(strtolower($uCode) != strtolower($_SESSION["adCodeText"]))
             {
                 $result["msg"] = "验证码填写错误";
