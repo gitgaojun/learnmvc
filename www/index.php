@@ -22,12 +22,6 @@ define("VPATH", rtrim(APPPATH."define/views", "/")."/");
 define("SYSPATH", rtrim(APPPATH."../system", "/")."/");
 //视图文件后缀
 define("EXT", ".html");
-//js文件路径
-define("JSPATH", rtrim(WEB."define/js", "/")."/");
-//css文件路径
-define("CSSPATH", rtrim(WEB."define/css", "/")."/");
-//image文件路径
-define("IMAGEPATH", rtrim(WEB."define/img", "/")."/");
 
 //开启session
 //session_start();
