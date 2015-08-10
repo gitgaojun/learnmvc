@@ -46,3 +46,26 @@ create table s_large(
 		l_code int(1) not null comment '大区code 例如以1开始的省/直辖市就是华北地区'
 		)engine=myisam default charset=utf8 comment='大区信息表';
 insert into s_large (l_name,l_code) values('华北',1),('东北',2),('华东',3),('中南',4),('西南', 5),('西北', 6),('台湾', 7),('港澳',8);
+
+
+# 合并省 城市 商圈表
+drop table if exists s_area;
+create table s_area(
+		area_id int not null auto_increment primary key comment '地区id',
+		a_name varchar(100) not null comment '地区名字',
+		p_id int not null comment '上级地区id',
+		a_info varchar(100) comment '描述(拼音)',
+		a_code int(11) comment '省code'
+)engine=myisam default charset=utf8 comment='区域表';
+
+insert into s_area (a_name, p_id, a_code) 
+	select p_name, 0, p_code  from s_province;
+
+insert into s_area (a_name, p_id, a_info, a_code) 
+	select f.c_name , a.area_id, f.c_info, a.a_code from (select * from s_city as c inner join s_province as p
+		on c.c_parent_id=p.p_code) as f inner join s_area as a on f.p_code=a.a_code;
+	
+insert into s_area (a_name, p_id, a_info, a_code)
+	select f.r_name, f.r_parent_id, f.r_info,NULL from (select * from s_city as c inner join s_regional as r on c.c_id=r.r_parent_id) as f
+		inner join s_area as a on f.c_info=a.a_info;
+		

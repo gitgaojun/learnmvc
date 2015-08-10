@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title><?php echo $title;?></title>
+<link rel="stylesheet" type="text/css" href="/define/js/plug/jquery-easyui-1.4.3/themes/default/easyui.css"/>
+<link rel="stylesheet" type="text/css" href="/define/js/plug/jquery-easyui-1.4.3/themes/icon.css"/>
+<script type="text/javascript" src="/define/js/plug/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="/define/js/plug/jquery-easyui-1.4.3/jquery.easyui.min.js"></script>
+</head>
+<body>
+<div class="easyui-panel" style="padding:5px;">
+	<ul class="easyui-tree">
+		<?php foreach($list as $v)<?php 
+				echo $v['area_id'];
+		?>
+		?>
+	</ul>	
+</div>
+</body>
+
+</html>

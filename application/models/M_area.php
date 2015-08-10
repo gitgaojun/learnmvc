@@ -15,7 +15,7 @@ defined("APPPATH") or exit("No direct script access allowed");
      * @author jun
      * @package M_area
      */
-    class M_area extends SR_Controller
+    class M_area extends SR_Model
     {
 
         protected $area_list;//地区列表
