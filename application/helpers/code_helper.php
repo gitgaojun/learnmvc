@@ -46,3 +46,38 @@ defined("APPPATH") or exit("No direct script access allowed");
             imagedestroy($im);
         }
     }
+
+
+    if( !function_exists('getRealIp') )
+    {
+
+        /**
+         * 获取真实ip地址
+         *
+         * @since 2015-8-12
+         * @author jun
+         * @return mixed
+         */
+        function getRealIp()
+        {
+            if( !empty($_SERVER['HTTP_CLIENT_IP']) )  // apache 可配置 nginx现在不会。不知道有没有
+            {
+                $ip = $_SERVER['HTTP_CLIENT_IP'];
+            }
+            elseif( !empty($_SERVER['HTTP_X_FORWARDED_FOR']) )
+            {
+                $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; // 如果客户端通过代理服务器，则取 HTTP_X_FORWARDED_FOR 的值
+            }
+            else
+            {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+
+
+            return $ip;
+        }
+        /*HTTP_CLIENT_IP 是代理服务器发送的HTTP头。如果是“超级匿名代理”，则返回none值。同样，REMOTE_ADDR也会被替换为这个代理服务器的IP。
+        $_SERVER['REMOTE_ADDR']; //访问端（有可能是用户，有可能是代理的）IP
+        $_SERVER['HTTP_CLIENT_IP']; //代理端的（有可能存在，可伪造）
+        $_SERVER['HTTP_X_FORWARDED_FOR']; //用户是在哪个IP使用的代理（有可能存在，也可以伪造）*/
+    }

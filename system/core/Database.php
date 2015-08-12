@@ -228,9 +228,16 @@ defined("APPPATH") OR exit("No direct script access allowed");
                 }
             }
             $sql = 'select '.$field.' from '.$table.' '.$wdata;
-            $fieldValue = $this->_query($sql);
-            if(empty($fieldValue)) $result=false;
-            else                   $result=$fieldValue[0][$field];
+            $result = $this->_query($sql);
+            if( is_object($result) )
+            {
+                while($row = $result->fetch_assoc())
+                {
+                    $data[] = $row;
+                }
+            }
+            if(empty($data)) $result=false;
+            else                   $result=$data[0][$field];
             return $result;
         }
 

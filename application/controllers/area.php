@@ -171,4 +171,20 @@ defined("APPPATH") or exit("No direct script access allowed");
             $this->view("province");
         }
 
+        /**
+         * 抓取数据的时候模拟对方如何获取真实ip的功能
+         *
+         * @since 2015-8-12
+         * @author jun
+         * @access public
+         * @return string
+         */
+        public function getRealIp()
+        {
+            $this->load->helper('code_helper');
+            $ip = getRealIp();
+            echo $ip;
+            exit;
+        }
+
     }
