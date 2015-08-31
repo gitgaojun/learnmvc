@@ -1,0 +1,118 @@
+<DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <base href="<%=basePath%>">
+  <title>My JSP 'quanxian.jsp' starting page</title>
+      
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">    
+  <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+  <meta http-equiv="description" content="This is my page">
+  
+  <script language="javascript" src="/define/js/plug/jquery-1.11.2.js" type="text/javascript"></script> 
+  <script type="text/javascript">
+    
+  
+function selectAll(idStart){
+
+	      var x = $("input[id^='"+idStart+"']");
+		  x.each(function(index,domEle){
+
+				          $(this).prop("checked",true);
+						        });
+		        
+		      }
+    
+function unSelectAllBox(idStart){
+
+	      var x = $("input[id^='"+idStart+"']");
+		  x.each(function(index,domEle){
+
+				          $(this).removeProp("checked");
+						        });
+		      }
+    
+function selectFather(id){
+
+	      $("#"+id).prop("checked", "checked");
+		      }
+    
+function UnSelectFather(id){
+
+	      $("#"+id).removeProp("checked");
+		      }
+    
+    
+    //判断还有没被选中的checkedbox
+function isExistSelect(idStart){
+
+	      var flag = false;
+		        var $arrayEle=$("input[id^='"+idStart+"'][id!='"+idStart+"_"+idStart+"']");
+				for (var i=0; i<$arrayEle.length; i++){
+
+					if ($($arrayEle[i]).prop("checked")){
+
+						          flag=true;			
+								          }
+					      }
+				      return flag;
+					      }
+    
+    
+function goSelect(id){
+
+	      var arrayVal=id.split("_");
+		  if (arrayVal[0] == arrayVal[1]){
+			  //parent dom
+			  if ($("#"+id).prop("checked")){
+
+				              selectAll(arrayVal[0]);
+							            }else{
+
+											            unSelectAllBox(arrayVal[0]);
+														          }
+			          }else{
+						  //child dom
+						            
+						  if ($("#" + id).prop("checked")) {
+
+							              selectFather(arrayVal[0] + "_" + arrayVal[0]);
+										            }
+						            else {
+															
+										if (!isExistSelect(arrayVal[0])){
+
+											              UnSelectFather(arrayVal[0] + "_" + arrayVal[0]);
+														              }
+										          }	
+									        }
+		      }
+        
+  </script>
+    </head>
+	  
+	  <body>
+	  
+	    
+			<fieldset>
+				<legend><input type="checkbox"  id="company_company" onclick="goSelect(this.id)" />客户管理</legend>
+				<div><input type="checkbox"  id="company_base"  onclick="goSelect(this.id)"/>客户管理1</div>
+				<div><input type="checkbox"  id="company_linkman" onclick="goSelect(this.id)" />客户管理2</div>
+				<div><input type="checkbox"  id="company_linkTouch"  onclick="goSelect(this.id)"/>客户管理3</div>
+				<div><input type="checkbox"  id="company_rule"  onclick="goSelect(this.id)"/>客户管理4</div>	
+				      
+				  </fieldset>
+				  
+				    <br/>
+				    <fieldset>
+						<legend><input type="checkbox"  id="employee_employee" onclick="goSelect(this.id)" />员工管理</legend>
+						<div><input type="checkbox"  id="employee_base"  onclick="goSelect(this.id)"/>员工管理1</div>
+						<div><input type="checkbox"  id="employee_linkman" onclick="goSelect(this.id)" />员工管理2</div>
+						<div><input type="checkbox"  id="employee_linkTouch"  onclick="goSelect(this.id)"/>员工管理3</div>
+						<div><input type="checkbox"  id="employee_rule"  onclick="goSelect(this.id)"/>员工管理4</div>	
+						      
+						  </fieldset>
+						  </body>
+						  </html>
+

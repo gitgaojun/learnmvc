@@ -62,7 +62,7 @@ defined("APPPATH") or exit("No direct script access allowed");
                 return;
             }
             ob_start();
-            echo (str_replace( array("{", "}"), array("<?php ", "?>"), file_get_contents(VPATH.$this->_view.EXT)));
+            echo (str_replace( array("<{", "}>"), array("<?php ", "?>"), file_get_contents(VPATH.$this->_view.EXT)));
             $buffer = ob_get_contents();
             ob_clean();
             $cacheFile = md5($this->_view).EXT;

@@ -23,7 +23,7 @@ header('Transfer-Encoding:Identity');// 设置字符编码
     }
 
     // 开启session 会话
-    session_start();
+    //session_start();
 
     ini_set('zlib.output_compression', 1);//开启gzip压缩 ,提速
 
